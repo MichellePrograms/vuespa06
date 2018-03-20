@@ -1,5 +1,34 @@
 
 State Management
 
+pluralSiteSRC\vue-spa\vuespa06
 in gitbash
-cd /D/pluralSiteSRC/vue-sap/vuespa06"
+cd /D/pluralSiteSRC/vue-spa/vuespa06
+
+
+what do we do when we want to share state between a child and another child
+or between a child and another element higher up on another node in the tree
+*see state management slide pdf
+such as username bill populating from the login component up to the appheader
+
+npm install
+npm start
+
+
+navigation to 
+http://localhost:3000
+redirects to
+http://localhost:3000/category/front-end
+
+
+extensions
+@recommended
+vetur added
+beautify added
+
+get the lesson 05 version to follow along
+http://localhost:3000/login
+
+
+1 idea
+use events to share
