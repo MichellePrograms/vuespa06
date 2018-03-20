@@ -12,30 +12,37 @@
 </template>
 <script>
   import Post from './Post.vue'
-  import { mapGetters } from 'vuex'
+  import appService from '../app.service.js'
   export default {
     components: {
       'app-post': Post
     },
-    computed: {
-      ...mapGetters('postsModule', ['posts'])
+    data () {
+      return {
+        id: this.$route.params.id,
+        posts: []
+      }
     },
     methods: {
       loadPosts () {
         let categoryId = 2
-        if (this.$route.params.id === 'mobile') {
+        if (this.id === 'mobile') {
           categoryId = 11
         }
-        this.$store.dispatch('postsModule/updateCategory', categoryId)
+        appService.getPosts(categoryId).then(data => {
+          this.posts = data
+        })
       }
     },
     watch: {
       '$route' (to, from) {
+        this.id = to.params.id
         this.loadPosts()
       }
     },
     created () {
       this.loadPosts()
+      console.log(this.$route.query.page)
     }
   }
 </script>
