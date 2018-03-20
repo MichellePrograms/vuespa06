@@ -1,0 +1,5 @@
+
+State Management
+
+in gitbash
+cd /D/pluralSiteSRC/vue-sap/vuespa06"
